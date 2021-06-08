@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- The original file can be found at https://docs.microsoft.com/en-us/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file -->
+<RunSettings>
+  <!-- Configurations that affect the Test Framework -->
+  <RunConfiguration>
+	<MaxCpuCount>4</MaxCpuCount>
+	<!-- Path relative to directory that contains .runsettings file-->
+
+	<!-- x86 or x64 -->
+	<!-- You can also change it from the Test menu; choose "Processor Architecture for AnyCPU Projects" -->
+	<TargetPlatform>x86</TargetPlatform>
+
+	<!-- Framework35 | [Framework40] | Framework45 -->
+
+	<!-- Path to Test Adapters -->
+	<TestAdaptersPaths>%SystemDrive%\Temp\foo;%SystemDrive%\Temp\bar</TestAdaptersPaths>
+
+	<!-- TestSessionTimeout was introduced in Visual Studio 2017 version 15.5 -->
+	<!-- Specify timeout in milliseconds. A valid value should be greater than 0 -->
+
+	<!-- true or false -->
+	<!-- Value that specifies the exit code when no tests are discovered -->
+	<TreatNoTestsAsError>true</TreatNoTestsAsError>
+  </RunConfiguration>
+
+  <!-- MSTest adapter -->
+  <!-- Resource https://github.com/Microsoft/testfx-docs/blob/main/RFCs/004-In-Assembly-Parallel-Execution.md -->
+  <MSTest>
+	<Parallelize>
+	  <Workers>0</Workers>
+	  <Scope>MethodLevel</Scope>
+	</Parallelize>
+  </MSTest>
+
+</RunSettings>
